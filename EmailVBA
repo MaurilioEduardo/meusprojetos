@@ -53,9 +53,7 @@ For X = 2 To 600
     Application.Wait waitTime
     
     Set emailenvia = Nothing
-    Set emailcorpo = Nothing
-    
+    Set emailcorpo = Nothing    
 Next
-
 End Sub
 
