@@ -1,0 +1,18 @@
+Sub ImportarInfos()
+
+' Atalho do teclado: Ctrl+Shift+T
+
+Dim x, y As Integer
+
+For x = 2 To 700
+    If Sheets("Detalhes").Cells(x, 2).Value = "" Then
+      Exit For
+    End If
+    
+    Sheets("modelo-importacao-despesas").Cells(x, 5) = Sheets("Detalhes").Cells(x, 3).Value
+    Sheets("modelo-importacao-despesas").Cells(x, 4) = Sheets("Detalhes").Cells(x, 1).Value
+    Sheets("modelo-importacao-despesas").Cells(x, 1) = Trim(Sheets("Detalhes").Cells(x, 10))
+    Sheets("modelo-importacao-despesas").Cells(x, 3) = Sheets("Detalhes").Cells(x, 11).Value
+Next
+
+End Sub
