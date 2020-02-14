@@ -1,8 +1,6 @@
 
 
-# meusprojetos
-
-Código para enviar e-mails padrão com anexos através do VBA.
+# Enviar e-mails padrão (Com anexos) através do VBA
 
 Public Sub Enviaemail()
 
