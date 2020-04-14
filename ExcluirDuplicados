@@ -1,0 +1,31 @@
+Sub excluigual()
+
+Dim ideleta, ideleta2 As Integer
+
+    For ideleta2 = 2 To 10000
+    
+        If Workbooks("Query De Bloqueio").Sheets("Plan Geral").Cells(ideleta2, 1).value = "" Then
+        
+            Exit For
+        
+        End If
+    
+        For ideleta = 2 To 10000
+        
+            If Workbooks("Query De Bloqueio").Sheets("Plan Query").Cells(ideleta, 1).value = "" Then
+            
+                Exit For
+            
+            End If
+                
+            If Workbooks("Query De Bloqueio").Sheets("Plan Geral").Cells(ideleta2, 1).value = Workbooks("Query De Bloqueio").Sheets("Plan Query").Cells(ideleta, 1).value Then
+            
+                Workbooks("Query De Bloqueio").Sheets("Plan Geral").Cells(ideleta2, 1).EntireRow.Delete
+            
+            End If
+    
+        Next ideleta
+        
+    Next ideleta2
+
+End Sub
