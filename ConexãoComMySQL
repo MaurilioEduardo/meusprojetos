@@ -1,0 +1,27 @@
+Dim conexao As New ADODB.Connection
+Dim consulta As New Recordset
+
+Set conexao = New ADODB.Connection
+
+conexao.Open ("DRIVER={MySQl ODBC 8.0 Ansi Driver};" _
+                        & "Server=***.***.**.**;" _
+                        & "Database=*****;" _
+                        & "Uid=******;" _
+                        & "Pwd=******;")
+
+Set consulta = New ADODB.Recordset
+
+Dim query As String
+
+query = "...."
+
+consulta.Open query, conexao, adOpenStatic, adLockReadOnly
+
+With Worksheets("Plan Geral").Cells(2, 1)
+.ClearContents
+.CopyFromRecordset consulta
+End With
+
+consulta.Close
+Set consulta = Nothing
+                      
